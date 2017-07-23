@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="net">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HTTP Archive (HAR) to CSV Export</title>
+  <meta name="description" content="HTTP Archive (HAR) to CSV Export">
+  <script src="script.js"></script>
+</head>
+<body>
+    <dialog open id="errorDialog">        
+        <form method="dialog">
+        <label id="errorMessage"></label>
+        <menu>            
+            <button type="submit">Ok</button>
+        </menu>
+        </form>
+    </dialog>
+
+
+    <div>
+        <label>Select HAR File</label>
+        <input type="file" name="har" id="inputFile" accept=".har">
+        <button id="export">Export</button>
+    </div>
+</body>
+</html>
