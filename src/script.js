@@ -32,10 +32,11 @@ window.onload = function(){
       //todo: HAR schema validator      
       if(harData.log && harData.log.entries){
         let csvRows = [];
+        csvRows.push("Name,Method,Status,Type,Size,Time");
         harData.log.entries.forEach(function(element) {
           let urlParts = element.request.url.split('/');
           let name = urlParts.pop() || urlParts.pop();
-          let row = `"${name}",${element.request.method},${element.response.status},${element.response.content.mimeType},${element.response.content.size} B,${element.time}`;
+          let row = `"${name}",${element.request.method},${element.response.status},${element.response.content.mimeType},${element.response.content.size} B,${element.time} ms`;
           csvRows.push(row);
         });
 
