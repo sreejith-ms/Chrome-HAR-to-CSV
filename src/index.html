@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>HTTP Archive (HAR) to CSV Export</title>
   <meta name="description" content="HTTP Archive (HAR) to CSV Export">
-  <script src="script.js"></script>
+  <script src="script.js"></script>  
 </head>
 <body>
     <dialog open id="errorDialog">        
@@ -17,11 +17,23 @@
         </form>
     </dialog>
 
-
     <div>
         <label>Select HAR File</label>
         <input type="file" name="har" id="inputFile" accept=".har">
         <button id="export">Export</button>
+        </br>
+    </div>
+    <div>        
+        <fieldset>
+            <legend>Export columns</legend>
+            <input type="checkbox" name="Name" value="Name">File Name
+            <input type="checkbox" name="Method" value="Method">Method
+            <input type="checkbox" name="Status" value="Status">Status
+            <input type="checkbox" name="Type" value="Type">Type
+            <input type="checkbox" name="Size" value="Size">Size
+            <input type="checkbox" name="Time" value="Time">Time
+            <input type="checkbox" name="StartedDateTime" value="StartedDateTime">StartedDateTime
+        </fieldset>
     </div>
 </body>
 </html>

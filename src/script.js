@@ -32,11 +32,11 @@ window.onload = function(){
       //todo: HAR schema validator      
       if(harData.log && harData.log.entries){
         let csvRows = [];
-        csvRows.push("Name,Method,Status,Type,Size,Time");
+        csvRows.push("Name,Method,Status,Type,Size,Time,StartedDateTime");
         harData.log.entries.forEach(function(element) {
           let urlParts = element.request.url.split('/');
           let name = urlParts.pop() || urlParts.pop();
-          let row = `"${name}",${element.request.method},${element.response.status},${element.response.content.mimeType},${element.response.content.size} B,${element.time} ms`;
+          let row = `"${name}",${element.request.method},${element.response.status},${element.response.content.mimeType},${element.response.content.size} B,${element.time} ms,${element.startedDateTime}`;
           csvRows.push(row);
         });
 
@@ -59,5 +59,6 @@ window.onload = function(){
       errorDialogBox.showModal();
       document.getElementById("errorMessage").innerHTML = message;
       document.getElementById("inputFile").value = "";
+      exportButton.disabled = true;
     }
 }
